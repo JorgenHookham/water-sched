@@ -3,8 +3,10 @@ watersched.factory('storage_service', function () {
     // Configure the localstore DB:
     persistence.store.websql.config(persistence, 'watersched', 'Your plants watering schedules.', 5*1024*1024); // 5Mb
 
-    var DataModel = persistence.define('MODEL_NAME', {
-        id: 'INT'
+    var Plant = persistence.define('Plant', {
+        name: 'TEXT',
+        water: 'TEXT',
+        last_water: 'DATE'
     });
 
     persistence.schemaSync();
@@ -17,11 +19,11 @@ watersched.factory('storage_service', function () {
         },
 
         remove: function (model) {
-            DataModel.all().filter('id', '=', model.id).destroyAll();
+            Plant.all().filter('name', '=', model.name).destroyAll();
         },
 
         fetchAll: function (collection, controller) {
-            DataModel.all().list(function (models) {
+            Plant.all().list(function (models) {
                 angular.forEach(models, function (model) {
                     collection.push(model._data);
                     controller.$digest();

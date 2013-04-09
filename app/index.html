@@ -9,6 +9,7 @@
         <title>Watersched</title>
         <meta name="description" content="Watersched tells you when your house plants need to be watered next. Each plant has it's own schedule, so Watersched tracks each individually.">
 
+        <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/global.css">
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
@@ -20,10 +21,47 @@
 
         <script src="js/app.js"></script>
         <script src="js/services/storage-service.js"></script>
+        <script src="js/controllers/plants-controller.js"></script>
     </head>
     <body>
 
-        <!-- [§] -->
+        <section ng-controller=PlantsCtrl>
+            <table ng-repeat="plant in plants" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>{{ plant.name }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Water Every</td>
+                        <td>{{ plant.water }} Days</td>
+                    </tr>
+                    <tr>
+                        <td>Last Watered</td>
+                        <td>{{ plant.last_water | date:'MMMM d' }}</td>
+                    </tr>
+                    <tr>
+                        <td colspan=2>
+                            <button ng-click="waterPlant(plant)" class="btn btn-success">Water</button>
+                            <button ng-click="removePlant(plant)" class="btn btn-danger">Remove</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <form ng-submit="addPlant()">
+                <fieldset>
+                    <label>Name</label>
+                    <input ng-model=name type=text palceholder="Common name, fancy name or nickname">
+                    <label>Watering Schedule</label>
+                    <input ng-model=water type=text palceholder="How often it needs water">
+                </fieldset>
+                <footer class="form-actions">
+                    <input type=submit class="btn btn-success btn-large" value="Add A Plant">
+                </footer>
+            </form>
+        </section>
 
     </body>
 </html>
