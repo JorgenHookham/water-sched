@@ -1,0 +1,20 @@
+{
+    "folders":
+    [
+        {
+            "file_exclude_patterns":
+            [
+                "*.scssc",
+                "*.sublime-workspace",
+                "*.sublime-project"
+            ],
+            "folder_exclude_patterns":
+            [
+                "app-built",
+                "app/css",
+                ".sass-cache"
+            ],
+            "path": "/Volumes/Data/git/water-sched"
+        }
+    ]
+}
