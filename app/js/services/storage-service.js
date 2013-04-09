@@ -1,7 +1,7 @@
 watersched.factory('storage_service', function () {
 
     // Configure the localstore DB:
-    persistence.store.websql.config(persistence, 'watersched', 'Your plants watering schedules.', 5*1024*1024); // 5Mb
+    persistence.store.websql.config(persistence, 'watersched', 'Your house plant watering schedules.', 5*1024*1024); // 5Mb
 
     var Plant = persistence.define('Plant', {
         name: 'TEXT',
@@ -13,21 +13,28 @@ watersched.factory('storage_service', function () {
 
     var storage_service = {
 
-        add: function (model) {
-            persistence.add(model);
+        add: function (plant) {
+            persistence.add(new Plant(plant));
             persistence.flush();
         },
 
-        remove: function (model) {
-            Plant.all().filter('name', '=', model.name).destroyAll();
+        remove: function (plant) {
+            Plant.all().filter('name', '=', plant.name).destroyAll();
         },
 
-        fetchAll: function (collection, controller) {
-            Plant.all().list(function (models) {
-                angular.forEach(models, function (model) {
-                    collection.push(model._data);
+        fetchAll: function (controller) {
+            Plant.all().list(function (plants) {
+                angular.forEach(plants, function (plant) {
+                    controller.plants.push(plant._data);
                     controller.$digest();
                 });
+            });
+        },
+
+        water: function(plant){
+            Plant.all().filter('name', '=', plant.name).one(function(plant){
+                plant.last_water = new Date();
+                persistence.flush();
             });
         }
     };
