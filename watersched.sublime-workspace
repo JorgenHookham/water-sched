@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"s",
+				"storage_service"
+			],
+			[
 				"r",
 				"rating-input-animation"
 			],
@@ -230,10 +234,6 @@
 			[
 				"new",
 				"new_question_view"
-			],
-			[
-				"s",
-				"social_flag-icon"
 			],
 			[
 				"socia",
@@ -519,13 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Test Javascript: Single File",
 	"command_palette":
@@ -579,6 +572,17 @@
 	},
 	"file_history":
 	[
+		"/Volumes/Data/git/water-sched/app/js/app.js",
+		"/Volumes/Data/git/water-sched/app/sass/global.scss",
+		"/Volumes/Data/git/water-sched/app/index.html",
+		"/Volumes/Data/git/water-sched/app/js/controllers/plants-controller.js",
+		"/Volumes/Data/git/water-sched/app/js/services/storage-service.js",
+		"/Volumes/Data/git/Jiminy-Angular/app/index.html",
+		"/Volumes/Data/git/Jiminy-Angular/app/js/controllers/reflection-list.js",
+		"/Volumes/Data/git/Jiminy-Angular/app/js/app.js",
+		"/Volumes/Data/git/Jiminy-Angular/app/js/services/storage-service.js",
+		"/Volumes/Data/git/water-sched/watersched.sublime-project",
+		"/Volumes/Data/git/Jiminy-Angular/jiminy-angular.sublime-project",
 		"/Volumes/Data/git/sokanu/site/djangoproject/static/js/modules/member_profile/lib/views/life_story_new_career.js",
 		"/Volumes/Data/git/sokanu/site/djangoproject/member_careers/api/resources.py",
 		"/Volumes/Data/git/sokanu/site/djangoproject/career_profile/templates/career_profile/index.html",
@@ -695,18 +699,7 @@
 		"/Volumes/Data/git/sokanu/site/djangoproject/careers/templates/careers/category.html",
 		"/Volumes/Data/git/sokanu/site/djangoproject/careers/templates/careers/index.html",
 		"/Volumes/Data/git/sokanu/site/djangoproject/sokanu/templates/sokanu/workshop/index.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/sokanu/templates/sokanu/terms.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/sokanu/templates/sokanu/work.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/career_profile/templates/career_profile/conversations/index.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/career_profile/templates/career_profile/conversations/create.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/matching/utils.py",
-		"/Volumes/Data/git/sokanu/site/djangoproject/static/js/modules/member_career_matches/lib/templates/gene_graph.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/matching/templates/matching/widgets/gene_analysis/_operon_gene_graph.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/matching/templates/matching/widgets/gene_analysis/_operon_gene_analysis.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/newsfeed/templates/notifications/notification_base.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/admin_dashboard/templates/admin_dashboard/matching/monte_carlo.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/admin_dashboard/templates/admin_dashboard/base.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/static/js/modules/member_career_relation/widget.js"
+		"/Volumes/Data/git/sokanu/site/djangoproject/sokanu/templates/sokanu/terms.html"
 	],
 	"find":
 	{
@@ -852,6 +845,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"model",
+			"type=text",
+			"div",
+			"|",
+			"id",
+			"DataModel",
 			"already added",
 			"looks like you've",
 			"{% end block %}",
@@ -973,12 +972,6 @@
 			"@media.*(?<!480|768|1024).",
 			"@media.*(?<!480|768|1024)px",
 			"@media.*(?<!480|768)px",
-			"@media.*\\(.*(?<!480|768)px.*\\)",
-			"@media.*\\(.*(?<!480|768|1024)px.*\\)",
-			"@media.*\\(.*(?<!480|768)px.*\\)",
-			"@media.*\\(.*((?<!480|768)px|(?<!1200)px).*\\)",
-			"@media.*\\(.*((?<!480|768)px|(?<!480|768)px).*\\)",
-			"@media.*\\(.*((?<!480|768)px).*\\)",
 			"@media.*\\(.*(?<!480|768)px.*\\)"
 		],
 		"highlight": true,
@@ -1125,34 +1118,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
