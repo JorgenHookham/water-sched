@@ -41,7 +41,7 @@
                     </div>
                 </header>
                 <figure class=plant--sched>
-                    <figcaption class=plant--sched--last>{{ plant.last_water_day | date:'MMM d' }}</figcaption>
+                    <figcaption class=plant--sched--last>{{ plant.last_water | date:'MMM d' }}</figcaption>
                     <b class=plant--sched--bar><b class=fill style="width: {{ until_next_water_day(plant) }}%;" ></b></b>
                     <figcaption class=plant--sched--next>{{ next_water_day(plant) | date:'MMM d' }}</figcaption>
                 </figure>

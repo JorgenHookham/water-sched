@@ -16,7 +16,7 @@ watersched.controller('PlantsCtrl',
         };
 
         $scope.waterPlant = function (plant) {
-            plant.last_water_day = new Date();
+            plant.last_water = new Date();
             storage_service.water(plant);
         };
 
@@ -26,15 +26,15 @@ watersched.controller('PlantsCtrl',
         };
 
         $scope.next_water_day = function (plant) {
-            if (plant.last_water_day) {
-                return new Date(plant.last_water_day.getTime() + plant.water*24*60*60*1000);
+            if (plant.last_water) {
+                return new Date(plant.last_water.getTime() + plant.water*24*60*60*1000);
             } else {
                 return '';
             }
         };
 
         $scope.until_next_water_day = function (plant) {
-            if (plant.last_water_day) {
+            if (plant.last_water) {
                 return new Date() / $scope.next_water_day(plant) * 100;
             } else {
                 return 0;

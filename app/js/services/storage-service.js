@@ -6,7 +6,7 @@ watersched.factory('storage_service', function () {
     var Plant = persistence.define('Plant', {
         name: 'TEXT',
         water: 'TEXT',
-        last_water_day: 'DATE'
+        last_water: 'DATE'
     });
 
     persistence.schemaSync();
@@ -34,7 +34,7 @@ watersched.factory('storage_service', function () {
 
         water: function(plant){
             Plant.all().filter('name', '=', plant.name).one(function(plant){
-                plant.last_water_day = new Date();
+                plant.last_water = new Date();
                 persistence.flush();
             });
         }
