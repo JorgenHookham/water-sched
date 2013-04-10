@@ -24,7 +24,6 @@ watersched.factory('storage_service', function () {
 
         fetchAll: function (controller) {
             Plant.all().list(function (plants) {
-                console.log('plants', plants);
                 angular.forEach(plants, function (plant) {
                     controller.plants.push(plant._data);
                     controller.$digest();
