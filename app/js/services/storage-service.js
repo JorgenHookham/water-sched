@@ -6,7 +6,7 @@ watersched.factory('storage_service', function () {
     var Plant = persistence.define('Plant', {
         name: 'TEXT',
         water: 'TEXT',
-        last_water: 'DATE'
+        last_water_day: 'DATE'
     });
 
     persistence.schemaSync();
@@ -24,6 +24,7 @@ watersched.factory('storage_service', function () {
 
         fetchAll: function (controller) {
             Plant.all().list(function (plants) {
+                console.log('plants', plants);
                 angular.forEach(plants, function (plant) {
                     controller.plants.push(plant._data);
                     controller.$digest();
@@ -33,7 +34,7 @@ watersched.factory('storage_service', function () {
 
         water: function(plant){
             Plant.all().filter('name', '=', plant.name).one(function(plant){
-                plant.last_water = new Date();
+                plant.last_water_day = new Date();
                 persistence.flush();
             });
         }
