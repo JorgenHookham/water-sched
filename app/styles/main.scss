@@ -1,1 +1,117 @@
-@import "compass_twitter_bootstrap";
+// ASCII ART: http://patorjk.com/software/taag/ | Caligraphy Font
+//
+//      ***** *    **   ***                                                                        *                      **    
+//   ******  *  *****    ***                  *                                                  **                        **   
+//  **   *  *     *****   ***                **                                                  **                        **   
+// *    *  **     * **      **               **                                                  **                        **   
+//     *  ***     *         **             ********           ***  ****       ****               **                        **   
+//    **   **     *         **    ****    ********     ***     **** **** *   * **** *    ****    **  ***      ***      *** **   
+//    **   **     *         **   * ***  *    **       * ***     **   ****   **  ****    * ***  * ** * ***    * ***    ********* 
+//    **   **     *         **  *   ****     **      *   ***    **         ****        *   ****  ***   ***  *   ***  **   ****  
+//    **   **     *         ** **    **      **     **    ***   **           ***      **         **     ** **    *** **    **   
+//    **   **     *         ** **    **      **     ********    **             ***    **         **     ** ********  **    **   
+//     **  **     *         ** **    **      **     *******     **               ***  **         **     ** *******   **    **   
+//      ** *      *         *  **    **      **     **          **          ****  **  **         **     ** **        **    **   
+//       ***      ***      *   **    **      **     ****    *   ***        * **** *   ***     *  **     ** ****    * **    **   
+//        ******** ********     ***** **      **     *******     ***          ****     *******   **     **  *******   *****     
+//          ****     ****        ***   **             *****                             *****     **    **   *****     ***      
+//                                                                                                      *                       
+//                                                                                                     *                        
+//                                                                                                    *                         
+//                                                                                                   *                          
+
+@import 'compass_twitter_bootstrap';
+
+
+
+////////////////////////
+// Variables & Mixins //
+////////////////////////
+
+@import 'compass/css3/text-shadow';
+@import 'compass/css3/transition';
+@import 'compass/css3/inline-block';
+
+
+// Colours
+
+$dark-grey: rgb(60, 60, 60);
+$mid-grey:  rgb(120, 120, 120);
+$lite-grey: rgb(240, 240, 240);
+
+$one: #B4D455;
+
+
+// Fonts
+
+$font-stack: 'omnes-pro', 'helvetica neue', helvetica, sans-serif;
+
+
+
+
+////////////////
+// Typography //
+////////////////
+
+body { font-family: $font-stack; }
+h1, h2, h3, h4 { margin: 0; font-weight: normal; line-height: 1; }
+
+.t-uppercase { text-transform: uppercase; }
+
+
+
+
+//////////
+// Base //
+//////////
+
+figure { padding: 0; -webkit-margin-before: 0; -webkit-margin-after: 0; -webkit-margin-start: 0; -webkit-margin-end: 0; }
+
+
+
+
+/////////////
+// Utility //
+/////////////
+
+.clearfix {
+    
+    zoom: 1;
+
+    &:after     { content: ''; display: table; clear: both; }
+    &:before    { content: ''; display: table; }
+}
+
+.l-left     { float: left; }
+.l-right    { float: right; }
+
+
+
+
+////////////
+// Plants //
+////////////
+
+.plant { width: 300px; display: block; float: left; margin: 10px; @extend .clearfix; }
+.plant--header { margin-bottom: 1em; @extend .clearfix; }
+.plant--name {}
+.plant--water-every { @extend .t-uppercase; }
+.plant--sched { position: relative; height: 20px; margin-bottom: 2em; }
+.plant--sched--last { position: absolute; left: 0; @extend .t-uppercase; }
+.plant--sched--next { position: absolute; right: 0; @extend .t-uppercase; }
+.plant--sched--bar { position: absolute; left: 4em; right: 4em; height: 20px; }
+.plant--sched--bar > .fill { @extend .l-right; height: 100%; background: $one; }
+.plant--water {}
+.plant--remove {}
+
+.add-plant { @extend .plant; }
+
+
+// § //
+
+
+
+
+
+
+
