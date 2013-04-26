@@ -28,8 +28,9 @@ watersched.controller('PlantsCtrl',
 
         $scope.cycle_remaining = function (plant) {
             if (plant.cycle_origin) {
-                var cycle_location = new Date() - plant.cycle_origin;
-                var cycle_remaining = (plant.cycle_duration - plant.cycle_origin) / plant.cycle_duration * 100;
+                var cycle_location  = new Date() - plant.cycle_origin,
+                    cycle_duration  = (parseInt(plant.cycle_duration, 10)-1)*24*60*60*1000,
+                    cycle_remaining = (cycle_duration - cycle_location) / cycle_duration * 100;
                 return cycle_remaining;
             } else {
                 return 0;

@@ -1,3 +1,6 @@
+// jslint node:true
+'use strict';
+
 watersched.factory('storage_service', function () {
 
     // Configure the localstore DB:
@@ -47,8 +50,9 @@ watersched.factory('storage_service', function () {
         },
 
         water: function(plant){
-            Plant.all().filter('name', '=', plant.name).one(function(plant){
-                plant.last_water = new Date();
+            Plant.all().filter('name', '=', plant.name).one(function(plant_in_db){
+                plant_in_db.cycle_origin = plant.cycle_origin;
+                plant_in_db.cycle_destination = plant.cycle_destination;
                 persistence.flush();
             });
         }
