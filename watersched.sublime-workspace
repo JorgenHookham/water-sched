@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"cy",
+				"cycle_duration"
+			],
+			[
+				"cycle",
+				"cycle_origin"
+			],
+			[
+				"next",
+				"next_water_day"
+			],
+			[
+				"fon",
+				"font-stack"
+			],
+			[
 				"s",
 				"storage_service"
 			],
@@ -432,10 +448,6 @@
 				"render_new_career"
 			],
 			[
-				"fon",
-				"font-family"
-			],
-			[
 				"lifes",
 				"lifestory-underline"
 			],
@@ -502,18 +514,6 @@
 			[
 				"req",
 				"request_uri"
-			],
-			[
-				"curr",
-				"currently_loaded_careers"
-			],
-			[
-				"CareerS",
-				"CareerStumblerMeta"
-			],
-			[
-				"posi",
-				"position"
 			]
 		]
 	},
@@ -572,11 +572,13 @@
 	},
 	"file_history":
 	[
-		"/Volumes/Data/git/water-sched/app/js/app.js",
-		"/Volumes/Data/git/water-sched/app/sass/global.scss",
 		"/Volumes/Data/git/water-sched/app/index.html",
+		"/Volumes/Data/git/water-sched/app/js/migrations/2013-04-10.js",
 		"/Volumes/Data/git/water-sched/app/js/controllers/plants-controller.js",
 		"/Volumes/Data/git/water-sched/app/js/services/storage-service.js",
+		"/Volumes/Data/git/water-sched/app/sass/global.scss",
+		"/Volumes/Data/git/water-sched/.gitignore",
+		"/Volumes/Data/git/water-sched/app/js/app.js",
 		"/Volumes/Data/git/Jiminy-Angular/app/index.html",
 		"/Volumes/Data/git/Jiminy-Angular/app/js/controllers/reflection-list.js",
 		"/Volumes/Data/git/Jiminy-Angular/app/js/app.js",
@@ -697,9 +699,7 @@
 		"/Volumes/Data/git/sokanu/site/djangoproject/static/lib/font_awesome/sass/font-awesome.scss",
 		"/Volumes/Data/git/sokanu/site/djangoproject/static/lib/font_awesome/sass/font-awesome-no-font-face.scss",
 		"/Volumes/Data/git/sokanu/site/djangoproject/careers/templates/careers/category.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/careers/templates/careers/index.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/sokanu/templates/sokanu/workshop/index.html",
-		"/Volumes/Data/git/sokanu/site/djangoproject/sokanu/templates/sokanu/terms.html"
+		"/Volumes/Data/git/sokanu/site/djangoproject/careers/templates/careers/index.html"
 	],
 	"find":
 	{
@@ -845,6 +845,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cycle_duration",
+			"next_action",
+			"watersched",
+			"get_",
+			"get_l",
+			"set_",
+			"type=\"text/javascript\"",
+			"type=\"text/javascript\" ",
+			"remove",
+			"addColumn",
+			"last_water_day",
+			"last_water",
+			"8",
+			"webkit",
+			"-webkit",
+			"left",
+			"class=plant",
+			"class",
+			"td",
 			"model",
 			"type=text",
 			"div",
@@ -953,26 +972,7 @@
 			"@media.*\\(.*px.*\\)",
 			"@media.*\\(.*\\d{2}px.*\\)",
 			"@media.*\\(.*(?<!480|768)\\d{2}px.*\\)",
-			"@media.*\\(.*(?<!480|768)\\d{3}px.*\\)",
-			"@media.*\\(.*(?<!480|768)px.*\\)",
-			"@media.*(?<!480|768)px",
-			"@media.*(?<!1200|768)px",
-			"@media.*(?<!(1200|768))px",
-			"@media.*(?<!1024|1200|768)px",
-			"@media.*(?<!1024|1200)px",
-			"@media.*(?<!1024)px",
-			"@media.*(?<!480|768|850)px",
-			"@media.*(?<!480|768)px",
-			"@media.*(?<!480|1200)px",
-			"@media.*(?<!480|1024)px",
-			"@media.*(?<!480|768)px",
-			"@media.*(?<!480|1024)px",
-			"@media.*(?<!480|768)px",
-			"@media.*(?<!480|768).",
-			"@media.*(?<!480|768|1024).",
-			"@media.*(?<!480|768|1024)px",
-			"@media.*(?<!480|768)px",
-			"@media.*\\(.*(?<!480|768)px.*\\)"
+			"@media.*\\(.*(?<!480|768)\\d{3}px.*\\)"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -980,6 +980,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"last_water",
+			"last_water_day",
 			"@include breakpoint(oversize)",
 			"@include breakpoint(large)",
 			"@include breakpoint(small)",
@@ -1105,9 +1107,7 @@
 			"life-story",
 			"",
 			"life-story--",
-			"life-story--career-story",
-			"life-story--",
-			"haven"
+			"life-story--career-story"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1168,6 +1168,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"controll",
+				"app/js/controllers/plants-controller.js"
+			],
+			[
+				"sto",
+				"app/js/services/storage-service.js"
+			],
+			[
+				"sass",
+				"app/sass/global.scss"
+			],
 			[
 				"membercareerresource",
 				"member_careers/api/resources.py"
@@ -1667,18 +1679,6 @@
 			[
 				"profile",
 				"member_profile/templates/member_profile.html"
-			],
-			[
-				"review--au",
-				"static/js/modules/career_profile/lib/templates/review--authenticate.html"
-			],
-			[
-				"recommendation",
-				"sokanu_socializer/templates/socializer_recommendation.html"
-			],
-			[
-				"staticmemberprofilehtml",
-				"static/js/modules/member_profile/lib/templates/life_story_career.html"
 			]
 		],
 		"width": 0.0

@@ -9,14 +9,15 @@ watersched.controller('PlantsCtrl',
         storage_service.fetchAll($scope);
 
         $scope.addPlant = function () {
-            var new_plant = { name: $scope.name, water: $scope.water };
+            var new_plant = { name: $scope.name, cycle_duration: $scope.cycle_duration };
             $scope.plants.push(new_plant);
             storage_service.add(new_plant);
-            $scope.name = $scope.water = '';
+            $scope.name = $scope.cycle_duration = '';
         };
 
         $scope.waterPlant = function (plant) {
-            plant.last_water = new Date();
+            plant.cycle_origin = new Date();
+            plant.cycle_destination = new Date(plant.cycle_origin.getTime() + parseInt(plant.cycle_duration, 10)*24*60*60*1000);
             storage_service.water(plant);
         };
 
@@ -25,17 +26,11 @@ watersched.controller('PlantsCtrl',
             storage_service.remove(plant);
         };
 
-        $scope.next_water_day = function (plant) {
-            if (plant.last_water) {
-                return new Date(plant.last_water.getTime() + plant.water*24*60*60*1000);
-            } else {
-                return '';
-            }
-        };
-
-        $scope.until_next_water_day = function (plant) {
-            if (plant.last_water) {
-                return new Date() / $scope.next_water_day(plant) * 100;
+        $scope.cycle_remaining = function (plant) {
+            if (plant.cycle_origin) {
+                var cycle_location = new Date() - plant.cycle_origin;
+                var cycle_remaining = (plant.cycle_duration - plant.cycle_origin) / plant.cycle_duration * 100;
+                return cycle_remaining;
             } else {
                 return 0;
             }

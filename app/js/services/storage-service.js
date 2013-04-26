@@ -3,10 +3,25 @@ watersched.factory('storage_service', function () {
     // Configure the localstore DB:
     persistence.store.websql.config(persistence, 'watersched', 'Your house plant watering schedules.', 5*1024*1024); // 5Mb
 
+    // require(['./vendors/persistencejs/persistence.migrations', './js/migrations/2013-04-10'], function (migrations_plugin, migration) {
+    //     persistence.migrations.init(function () {
+    //         persistence.migrate(1, function() {
+    //             console.log('Migration\'s done!');
+    //         });
+    //     });
+    // });
+
+    // var Plant = persistence.define('Plant', {
+    //     name: 'TEXT',
+    //     water: 'TEXT',
+    //     last_water: 'DATE'
+    // });
+
     var Plant = persistence.define('Plant', {
         name: 'TEXT',
-        water: 'TEXT',
-        last_water: 'DATE'
+        cycle_origin: 'DATE',
+        cycle_destination: 'DATE',
+        cycle_duration: 'INT'
     });
 
     persistence.schemaSync();

@@ -12,8 +12,8 @@
         <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/global.css">
 
-        <script type="text/javascript" src="//use.typekit.net/mje2syf.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script src="//use.typekit.net/mje2syf.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
         <script>window.angular || document.write('<script src="vendors/angular/angular.min.js">\x3C/script>')</script>
@@ -34,16 +34,16 @@
                 <header class=plant--header>
                     <div class="l-left">
                         <h2 class=plant--name>{{ plant.name }}</h2>
-                        <p class=plant--water-every>Every {{ plant.water }} Days</p>
+                        <p class=plant--water-every>Every {{ plant.cycle_duration }} Days</p>
                     </div>
                     <div class="l-right">
                         <button ng-click="removePlant(plant)" class="btn btn-danger plant--remove"><i class="icon-trash icon-white"></i></button>
                     </div>
                 </header>
                 <figure class=plant--sched>
-                    <figcaption class=plant--sched--last>{{ plant.last_water | date:'MMM d' }}</figcaption>
-                    <b class=plant--sched--bar><b class=fill style="width: {{ until_next_water_day(plant) }}%;" ></b></b>
-                    <figcaption class=plant--sched--next>{{ next_water_day(plant) | date:'MMM d' }}</figcaption>
+                    <figcaption class=plant--sched--last>{{ plant.cycle_origin | date:'MMM d' }}</figcaption>
+                    <b class=plant--sched--bar><b class=fill style="width: {{ cycle_remaining(plant) }}%;" ></b></b>
+                    <figcaption class=plant--sched--next>{{ plant.cycle_destination | date:'MMM d' }}</figcaption>
                 </figure>
                 <button ng-click="waterPlant(plant)" class="btn btn-success btn-block plant--water t-uppercase">Water</button>
             </article>
@@ -53,9 +53,9 @@
             <form class=add-plant ng-submit="addPlant()">
                 <fieldset>
                     <label>Name</label>
-                    <input ng-model=name type=text palceholder="Common name, fancy name or nickname" required>
+                    <input ng-model=name type=text placeholder="Common name, fancy name or nickname" required>
                     <label>Watering Schedule</label>
-                    <input ng-model=water type=number palceholder="How often it needs water" required>
+                    <input ng-model="cycle_duration" type=number placeholder="How often it needs water" required>
                 </fieldset>
                 <footer class="form-actions">
                     <input type=submit class="btn btn-success btn-large" value="Add A Plant">
