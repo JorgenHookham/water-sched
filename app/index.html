@@ -22,7 +22,7 @@
         <script>try{Typekit.load();}catch(e){}</script>
 
         <!-- Takana -->
-        <script data-project="water-sched" src="http://localhost:48626/javascripts/edge.js"></script>
+        <!-- <script data-project="water-sched" src="http://localhost:48626/javascripts/edge.js"></script> -->
     </head>
     <body ng-app="watersched">
         <!--[if lt IE 7]>
@@ -57,6 +57,7 @@
             <!-- [§] -->
 
             <form class=add-plant ng-submit="addPlant()">
+                <h2>Add A Plant</h2>
                 <fieldset>
                     <label>Name</label>
                     <input ng-model=name type=text placeholder="Common name, fancy name or nickname" required>
@@ -79,7 +80,6 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/services/storage-service.js"></script>
         <script src="scripts/controllers/plants-controller.js"></script>
-        <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
     </body>
 </html>
